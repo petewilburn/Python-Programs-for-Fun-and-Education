@@ -1,5 +1,7 @@
 # A Python Program to perform Multiplication of two numbers provided by the user.
 
+# Minimum Python version: 3.9
+
 # ---------------------------------------------------------------------------------------------
 # File: P0103_Multiplication.py
 # Description: Multiplies two numbers provided by the user and prints the result.
@@ -8,9 +10,7 @@
 # Copyright (c) 2025 Pete W.
 # ---------------------------------------------------------------------------------------------
 
-from typing import Union
-
-def multiply_a_by_b(a: Union[float, int], b: Union[float, int]) -> Union[float, int]:
+def multiply_a_by_b(a: float|int, b: float|int) -> float|int:
     """
     Returns the result of multiplying a by b.
     Raises ValueError if inputs are not numbers.
@@ -20,10 +20,12 @@ def multiply_a_by_b(a: Union[float, int], b: Union[float, int]) -> Union[float, 
     return a * b
 
 def print_welcome_message() -> None:
-    print("Welcome to the Multiplication Program!")
-    print("This program will multiply the first number by the second number.")
+    print("\nWelcome to the Multiplication Program!")
+    print("\nThis program will multiply the first number by the second number.")
+    print("You will be prompted to enter two numbers.")
+    print("\nLet's get started!\n")
 
-def prompt_user_for_numbers() -> Tuple[float, float]:
+def prompt_user_for_numbers() -> tuple[float, float]:
     """Prompts the user for two numbers and returns them as a tuple."""
     count = 0
     while count < 3:
@@ -38,7 +40,7 @@ def prompt_user_for_numbers() -> Tuple[float, float]:
 
 def print_result(num1: float, num2: float, result: float) -> None:
     """Prints the result of the multiplication."""
-    print(f"The result of multiplying {num1} by {num2} is: {result}")
+    print(f"\nThe result of multiplying {num1} by {num2} is: {result}")
 
 def main() -> None:
     """Main function to execute the multiplication program."""
@@ -50,8 +52,8 @@ def main() -> None:
     except ValueError as e:
         print(f"Error: {e}")
     finally:
-        print("Thank you for using the Multiplication Program!")
-    print("Goodbye!")
+        print("\nThank you for using the Multiplication Program!")
+        print("\nGoodbye!\n")
 
 if __name__ == "__main__":
     main()

@@ -1,5 +1,7 @@
 # This program performs subtraction of two numbers provided by the user.
 
+# Minimum Python version: 3.9
+
 # ---------------------------------------------------------------------------------------------
 # File: P0102_Subtraction.py
 # Description: Subtracts the second number from the first number provided by the user.
@@ -7,9 +9,8 @@
 # License: MIT License
 # Copyright (c) 2025 Pete W.
 # ---------------------------------------------------------------------------------------------
-from typing import Union
 
-def subtract_b_from_a(a: Union[float, int], b: Union[float, int]) -> Union[float, int]:
+def subtract_b_from_a(a: float|int, b: float|int) -> float|int:
     """
     Returns the difference of two numbers (a - b).
     Raises ValueError if inputs are not numbers.
@@ -19,8 +20,10 @@ def subtract_b_from_a(a: Union[float, int], b: Union[float, int]) -> Union[float
     return a - b
 
 def print_welcome_message() -> None:
-    print("Welcome to the Subtraction Program!")
+    print("\nWelcome to the Subtraction Program!\n")
     print("This program will subtract the second number from the first number.")
+    print("You will be prompted to enter two numbers.\n")
+    print("Let's get started!\n")
 
 def prompt_user_for_numbers() -> tuple[float, float]:
     """Prompts the user for two numbers and returns them as a tuple."""
@@ -37,7 +40,7 @@ def prompt_user_for_numbers() -> tuple[float, float]:
 
 def print_result(num1: float, num2: float, result: float) -> None:
     """Prints the result of the subtraction."""
-    print(f"The difference between {num1} and {num2} is: {result}")
+    print(f"\nThe difference between {num1} and {num2} is: {result}")
 
 def main() -> None:
     """Main function to execute the subtraction program."""
@@ -49,8 +52,8 @@ def main() -> None:
     except ValueError as e:
         print(e)
     finally:
-        print("Thank you for using the Subtraction Program!")
-    print("Goodbye!")
+        print("\nThank you for using the Subtraction Program!")
+        print("\nGoodbye!\n")
 
 if __name__ == "__main__":
     main()

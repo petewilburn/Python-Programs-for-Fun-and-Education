@@ -1,5 +1,7 @@
 # A Python Program to perform Division
 
+# Minimum Python version: 3.9
+
 # ----------------------------------------------------------------------------------------------
 # File: P0104_Division.py
 # Description: Divides the first number by the second number provided by the user.
@@ -7,9 +9,8 @@
 # License: MIT License
 # Copyright (c) 2025 Pete W.
 # ----------------------------------------------------------------------------------------------
-from typing import Union
 
-def divide_a_by_b(a: Union[float, int], b: Union[float, int]) -> Union[float, int]:
+def divide_a_by_b(a: float|int, b: float|int) -> float|int:
     """
     Returns the result of dividing a by b.
     Raises ValueError if inputs are not numbers, 
@@ -22,8 +23,10 @@ def divide_a_by_b(a: Union[float, int], b: Union[float, int]) -> Union[float, in
     return a / b
 
 def print_welcome_message() -> None:
-    print("Welcome to the Division Program!")
-    print("This program will divide the first number by the second number.")
+    print("\nWelcome to the Division Program!")
+    print("\nThis program will divide the first number by the second number.")
+    print("You will be prompted to enter two numbers.")
+    print("\nLet's get started!\n")
 
 def prompt_user_for_numbers() -> tuple[float, float]:
     """Prompts the user for two numbers and returns them as a tuple."""
@@ -40,7 +43,7 @@ def prompt_user_for_numbers() -> tuple[float, float]:
 
 def print_result(num1: float, num2: float, result: float) -> None:
     """Prints the result of the division."""
-    print(f"The result of dividing {num1} by {num2} is: {result}")
+    print(f"\nThe result of dividing {num1} by {num2} is: {result}")
 
 def main() -> None:
     """Main function to execute the division program."""
@@ -55,8 +58,8 @@ def main() -> None:
     except ZeroDivisionError as e:
         print(e)
     finally:
-        print("Thank you for using the Division Program!")
-    print("Goodbye!")
+        print("\nThank you for using the Division Program!")
+        print("\nGoodbye!\n")
 
 if __name__ == "__main__":
     main()

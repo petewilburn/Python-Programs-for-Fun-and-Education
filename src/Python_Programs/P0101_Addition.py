@@ -1,5 +1,7 @@
 # A Python Program to perform addition of two numbers provided by the user.
 
+# Minimum Python version: 3.9
+
 # -----------------------------------------------------------------------------
 # File: P0101_Addition.py
 # Description: Adds two numbers provided by the user and prints the result.
@@ -8,9 +10,7 @@
 # Copyright (c) 2025 Pete W.
 # -----------------------------------------------------------------------------
 
-from typing import Union
-
-def add_numbers(a: Union[float, int], b: Union[float, int]) -> Union[float, int]:
+def add_numbers(a: float|int, b: float|int) -> float|int:
     """
     Returns the sum of two numbers.
 
@@ -22,8 +22,10 @@ def add_numbers(a: Union[float, int], b: Union[float, int]) -> Union[float, int]
     return a + b
 
 def print_welcome_message() -> None:
-    print("Welcome to the Addition Program!")
+    print("\nWelcome to the Addition Program!\n")
     print("This program will add two numbers that you provide.")
+    print("You will be prompted to enter two numbers.")
+    print("\nLet's get started!\n")
 
 def prompt_user_for_numbers() -> tuple[float, float]:
     """Prompts the user for two numbers and returns them as a tuple."""
@@ -40,7 +42,7 @@ def prompt_user_for_numbers() -> tuple[float, float]:
 
 def print_result(num1: float, num2: float, result: float) -> None:
     """Prints the result of the addition."""
-    print(f"The sum of {num1} and {num2} is: {result}")
+    print(f"\nThe sum of {num1} and {num2} is: {result}\n")
 
 def main() -> None:
     """Main function to execute the addition program."""
@@ -52,8 +54,8 @@ def main() -> None:
     except ValueError as e:
         print(e)
     finally:
-        print("Thank you for using the Addition Program!")
-    print("Goodbye!")
+        print("\nThank you for using the Addition Program!")
+    print("\nGoodbye!\n")
 
 if __name__ == "__main__":
     main()

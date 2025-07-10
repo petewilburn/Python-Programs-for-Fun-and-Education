@@ -1,5 +1,7 @@
 # A Python Program to print the Fibonacci series up to a given number.
 
+# Minimum Python Version: 3.9
+
 # -----------------------------------------------------------------------------
 # File: P0413_Print_Fibonacci_Sequence.py
 # Description: Prints the Fibonacci sequence up to a user-specified number of terms.
@@ -27,8 +29,11 @@ def fibonacci(n: int) -> list:
     return fib_sequence[:n]
 
 def print_welcome_message() -> None:
-    print("Welcome to the Fibonacci Sequence Program!")
-    print("This program will print the Fibonacci sequence up to a given number.")
+    """Prints a welcome message to the user."""
+    print("\nWelcome to the Fibonacci Sequence Program!")
+    print("This program will generate the Fibonacci sequence up to a specified number of terms.")
+    print("You will be prompted to enter the number of terms you want in the sequence.")
+    print("\nLet's get started!\n")
 
 def prompt_user_for_number_of_terms() -> int:
     """Prompts the user for the number of terms in the Fibonacci sequence."""
@@ -46,13 +51,12 @@ def prompt_user_for_number_of_terms() -> int:
         except ValueError as e:
             count += 1
             print(f"Invalid input: {e}. You have {3 - count} attempts left.")
-    if count == 3:
-        raise ValueError("Too many invalid attempts. Exiting.")
+    raise ValueError("Too many invalid attempts. Exiting.")
 
 
 def print_fibonacci_sequence(sequence: list) -> None:
     """Prints the Fibonacci sequence."""
-    print("The Fibonacci sequence is:")
+    print("\nThe Fibonacci sequence is:")
     print(", ".join(map(str, sequence)))
 
 def main():
@@ -65,8 +69,8 @@ def main():
     except ValueError as e:
         print(e)
     finally:
-        print("Thank you for using the Fibonacci Sequence Program!")
-    print("Goodbye!")
+        print("\nThank you for using the Fibonacci Sequence Program!")
+        print("\nGoodbye!\n")
 
 if __name__ == "__main__":
     main()

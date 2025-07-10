@@ -1,50 +1,64 @@
 #A Python program to check if an integer is odd or even
 
-def prompt_for_input() -> int | None:
-    """Prompt the user for an integer and return it."""
-    try:
-        number = int(input("Please enter an integer: "))
-        return number
-    except ValueError:
-        print("Invalid input. Please enter a valid integer.")
-        return None
+# Minimum Python version: 3.9
 
-def check_for_zero(number: int) -> bool:
-    """Check if the number is zero."""
-    if number == 0:
-        print("The number is zero.")
-        return True
-    return False
+# ---------------------------------------------------------------------------------------------
+# File: P0302_Check_if_Odd_Even.py
+# Description: A Python program to check if an integer is odd or even. 
+# Author: Pete W.
+# License: MIT License
+# Copyright (c) 2025 Pete W.
+# ---------------------------------------------------------------------------------------------
 
 def check_odd_even(number: int) -> str:
     """Check if the number is odd or even."""
     # Check if the number is even or odd using modulus operator
+    if not isinstance(number, int):
+        raise ValueError("Input must be an integer.")
     numtype = "None"
-    if number % 2 == 0:
+    if number == 0:
+        numtype = "Zero. Zero is neither odd nor even."
+    elif number % 2 == 0:
         numtype = "Even"
-    else:
+    elif number % 2 != 0:
         numtype = "Odd" 
     return numtype
 
-def print_result(numtype: str) -> None:
+def print_welcome_message() -> None:
+    """Print a welcome message to the user."""
+    print("\nWelcome to the Odd/Even Checker Program!\n")
+    print("\nThis program will check if an integer is odd or even.")
+    print("You will be prompted to enter an integer.")
+    print("\nLet's get started!\n")
+
+def prompt_for_input() -> int | None:
+    """Prompt the user for an integer and return it."""
+    count = 0
+    while count < 3:
+        count += 1
+        try:
+            number = int(input("Please enter an integer: "))
+            return number
+        except ValueError as e:
+            print(f"Invalid input: {e}. Please enter a valid integer.")
+    raise ValueError("Too many invalid attempts. Exiting the program.")
+
+def print_result(number: int, numtype: str) -> None:
     """Print the result based on the number type."""
-    print(f"The number is: {numtype}")
+    print(f"\nThe number {number} is: {numtype}")
 
 def main():
     """Main function to run the program."""
-    print("This program checks if an integer is odd or even.")
-    number = None
-    count = 0
-    while number is None and count < 3:
-        count += 1
+    print_welcome_message()
+    try:
         number = prompt_for_input()
-    if number is not None:
-        if check_for_zero(number):
-            return
         numtype = check_odd_even(number)
-        print_result(numtype)
-    else:
-        print("Failed to enter a valid integer after 3 attempts. Exiting the program. \n\n *** goodbye! ***")
+        print_result(number, numtype)
+    except ValueError as e:
+        print(e)
+    finally:
+        print("\nThank you for using the Odd/Even Checker Program!") 
+        print("\nGoodbye!\n")
 
 if __name__ == "__main__":
     main()

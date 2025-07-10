@@ -20,10 +20,6 @@ Welcome to this collection of Python programs designed for both learning and enj
     python filename.py
     ```
 
-## Contributing
-
-Contributions are welcome! Feel free to submit pull requests with your own fun or educational Python programs.
-
 ## License
 
 This repository is licensed under the MIT License.
