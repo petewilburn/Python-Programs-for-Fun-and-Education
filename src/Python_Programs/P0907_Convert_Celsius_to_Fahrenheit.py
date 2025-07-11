@@ -62,25 +62,44 @@ def prompt_for_celsius() -> float | None:
     
     :return: Temperature in Celsius
     """
-    try:
-        celsius = float(input("Enter temperature in Celsius: "))
-        return celsius
-    except ValueError:
-        print("Invalid input. Please enter a numeric value.")
-        return prompt_for_celsius()
+    count = 0
+    while count < 3:
+        count += 1
+        try:
+            celsius = float(input("Enter temperature in Celsius: "))
+            return celsius
+        except ValueError:
+            print("Invalid input. Please enter a numeric value.")
+    raise ValueError("Too many invalid attempts. Exiting the program.")
 
 def prompt_for_fahrenheit() -> float | None:
     """
     Prompt the user for a temperature in Fahrenheit.
-    
+
     :return: Temperature in Fahrenheit
     """
-    try:
-        fahrenheit = float(input("Enter temperature in Fahrenheit: "))
-        return fahrenheit
-    except ValueError:
-        print("Invalid input. Please enter a numeric value.")
-        return prompt_for_fahrenheit()
+    count = 0
+    while count < 3:
+        count += 1
+        try:
+            fahrenheit = float(input("Enter temperature in Fahrenheit: "))
+            return fahrenheit
+        except ValueError:
+            print("Invalid input. Please enter a numeric value.")
+    raise ValueError("Too many invalid attempts. Exiting the program.")
+
+def print_conversion_result(celsius: float, fahrenheit: float, choice: str) -> None:
+    """
+    Print the conversion result based on the user's choice.
+    
+    :param celsius: Temperature in Celsius
+    :param fahrenheit: Temperature in Fahrenheit
+    :param choice: 'C' for Celsius to Fahrenheit or 'F' for Fahrenheit to Celsius
+    """
+    if choice == 'C':
+        print(f"\n{celsius}°C is equal to {fahrenheit:.2f}°F.")
+    elif choice == 'F':
+        print(f"\n{fahrenheit}°F is equal to {celsius:.2f}°C.")
 
 def main():
     """
@@ -92,20 +111,18 @@ def main():
         if choice == 'C':
             celsius = prompt_for_celsius()
             fahrenheit = celsius_to_fahrenheit(celsius)
-            print(f"\n{celsius}°C is equal to {fahrenheit:.2f}°F.")
+            print_conversion_result(celsius, fahrenheit, choice)
         elif choice == 'F':
             fahrenheit = prompt_for_fahrenheit()
             celsius = fahrenheit_to_celsius(fahrenheit)
-            print(f"\n{fahrenheit}°F is equal to {celsius:.2f}°C.")
+            print_conversion_result(celsius, fahrenheit, choice)
     except Exception as e:
         print(f"An error occurred: {e}")
     finally:
         print("\nThank you for using the Temperature Converter Program!")
         print("\nGoodbye!\n")
 
-
 if __name__ == "__main__":
-    # Main function to execute the Celsius to Fahrenheit or Fahrenheit to Celsius conversion
     main()
 
 # This code allows the user to convert temperatures between Celsius and Fahrenheit.

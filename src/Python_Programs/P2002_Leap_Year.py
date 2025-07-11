@@ -1,17 +1,14 @@
-#A Python program to check for a leap year
+# A Python program to check for a leap year
 
-def prompt_for_input() -> int | None:
-    """Prompt the user for a year and return it."""
-    try:
-        year = int(input("Please enter a year: "))
-        if year <= 0:
-            raise ValueError("The year cannot be negative or 0.")
-        elif year > 9999:
-            raise ValueError("Year must be a four-digit integer number.")
-        return year
-    except ValueError:
-        print("Invalid input. Please enter a valid year.")
-        return None
+# Minimum Python Version: 3.9
+
+# ---------------------------------------------------------------------------------------------
+# File: P2002_Leap_Year.py
+# Description: A Python program to check if a given year is a leap year.
+# Author: Pete W.
+# License: MIT License
+# Copyright (c) 2025 Pete W.
+# ---------------------------------------------------------------------------------------------
 
 def check_leap_year(year: int) -> bool:
     """Check if the year is a leap year."""
@@ -23,6 +20,27 @@ def check_leap_year(year: int) -> bool:
         return True
     return False
 
+def print_welcome_message() -> None:
+    print("\nWelcome to the Leap Year Checker!")
+    print("\nThis program will determine if a given year is a leap year.")
+    print("You will be prompted to enter a year.")
+    print("\nLet's get started!\n")
+
+def prompt_for_input() -> int | None:
+    """Prompt the user for a year and return it."""
+    count = 0
+    while count < 3:
+        count += 1
+        try:
+            year = int(input("Please enter a year (e.g., 2023): "))
+            if year < 0:
+                print("Year must be a positive integer.")
+                continue
+            return year
+        except ValueError as e:
+            print(f"Invalid input: {e}. Please enter a valid year.")
+    raise ValueError("Too many invalid attempts. Exiting the program.")
+
 def print_result(year: int, is_leap: bool) -> None:
     """Print the result based on whether the year is a leap year."""
     if not isinstance(year, int):
@@ -30,23 +48,22 @@ def print_result(year: int, is_leap: bool) -> None:
     if not isinstance(is_leap, bool):
         raise ValueError("is_leap must be a boolean value.")
     if is_leap:
-        print(f"{year} is a leap year.")
+        print(f"\n{year} is a leap year.")
     else:
-        print(f"{year} is not a leap year.")
+        print(f"\n{year} is not a leap year.")
 
 def main():
     """Main function to run the program."""
-    print("This program checks if a year is a leap year.")
-    year = None
-    count = 0
-    while year is None and count < 3:
-        count += 1
+    print_welcome_message()
+    try:
         year = prompt_for_input()
-    if year is not None:
         is_leap = check_leap_year(year)
         print_result(year, is_leap)
-    else:
-        print("Failed to enter a valid year after 3 attempts. Exiting the program. \n\n *** goodbye! ***")
+    except ValueError as e:
+        print(f"An error occurred: {e}")
+    finally:
+        print("\nThank you for using the Leap Year Checker!")
+        print("\nGoodbye!\n")
 
 if __name__ == "__main__":
     main()
