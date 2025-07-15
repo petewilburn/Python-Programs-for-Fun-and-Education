@@ -31,7 +31,7 @@ def fibonacci(n: int) -> list:
 def print_welcome_message() -> None:
     """Prints a welcome message to the user."""
     print("\nWelcome to the Fibonacci Sequence Program!")
-    print("This program will generate the Fibonacci sequence up to a specified number of terms.")
+    print("\nThis program will generate the Fibonacci sequence up to a specified number of terms.")
     print("You will be prompted to enter the number of terms you want in the sequence.")
     print("\nLet's get started!\n")
 
@@ -39,25 +39,27 @@ def prompt_user_for_number_of_terms() -> int:
     """Prompts the user for the number of terms in the Fibonacci sequence."""
     count = 0
     while count < 3:
+        count += 1
         try:
             terms = int(input("Enter the number of terms in the Fibonacci sequence: "))
             if terms <= 0:
-                count += 1
                 raise ValueError("The number of terms must be a positive integer.")
             if terms > 100:
-                count += 1
                 raise ValueError("The number of terms must not exceed 100.")
             return terms
         except ValueError as e:
-            count += 1
             print(f"Invalid input: {e}. You have {3 - count} attempts left.")
     raise ValueError("Too many invalid attempts. Exiting.")
-
 
 def print_fibonacci_sequence(sequence: list) -> None:
     """Prints the Fibonacci sequence."""
     print("\nThe Fibonacci sequence is:")
     print(", ".join(map(str, sequence)))
+
+def print_thank_you_message() -> None:
+    """Prints a thank you message to the user."""
+    print("\nThank you for using the Fibonacci Sequence Program!")
+    print("\nGoodbye!\n")
 
 def main():
     """Main function to execute the Fibonacci program."""
@@ -69,8 +71,8 @@ def main():
     except ValueError as e:
         print(e)
     finally:
-        print("\nThank you for using the Fibonacci Sequence Program!")
-        print("\nGoodbye!\n")
+        print_thank_you_message()
+
 
 if __name__ == "__main__":
     main()
