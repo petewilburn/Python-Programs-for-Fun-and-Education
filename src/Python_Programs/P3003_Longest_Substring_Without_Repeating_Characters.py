@@ -56,8 +56,12 @@ def print_longest_substring_length(length: int) -> None:
     print(f"\nThe length of the longest substring without repeating characters is: {length}")
 
 def print_runtime(runtime: float) -> None:
-    """Prints the runtime of the program."""
+    """Prints the runtime of the program in milliseconds."""
     print(f"\nRuntime: {runtime:.6f} milliseconds")
+
+def print_solution_title() -> None:
+    """Prints the title of the solution."""
+    print("\nSolution: Longest Substring Without Repeating Characters using Sliding Window Approach")
 
 def print_intuition() -> None:
     """Prints the intuition behind the algorithm."""
@@ -77,25 +81,23 @@ def print_approach() -> None:
 def print_complexity() -> None:
     """Prints the time and space complexity of the algorithm."""
     print("\nTime Complexity: O(n)")
-    print("Space Complexity: O(min(n, m)), where n is the length of the string and m is the size of the character set.")
+    print("Space Complexity: O(m), where m is the size of the character set, since the dictionary stores at most one entry per unique character.")
 
-# def print_code() -> None:
-#     """Prints the code of the algorithm."""
-#     print("\nCode:")
-#     print("```python")
-#     print("def length_of_longest_substring(s: str) -> int:")
-#     print("    if not s:")
-#     print("        return 0")
-#     print("    char_index_map = {}")
-#     print("    max_count = 0")
-#     print("    start = 0")
-#     print("    for index, char in enumerate(s):")
-#     print("        if char in char_index_map and char_index_map[char] >= start:")
-#     print("            start = char_index_map[char] + 1")
-#     print("        char_index_map[char] = index")
-#     print("        max_count = max(max_count, index - start + 1)")
-#     print("    return max_count")
-#     print("```")
+def print_code() -> None:
+    """Prints the code of the algorithm."""
+    print("\nCode:")
+    print("    def length_of_longest_substring(s: str) -> int:")
+    print("        if not s:")
+    print("            return 0")
+    print("        char_index_map = {}")
+    print("        max_count = 0")
+    print("        start = 0")
+    print("        for index, char in enumerate(s):")
+    print("            if char in char_index_map and char_index_map[char] >= start:")
+    print("                start = char_index_map[char] + 1")
+    print("            char_index_map[char] = index")
+    print("            max_count = max(max_count, index - start + 1)")
+    print("        return max_count")
 
 def print_thank_you_message() -> None:
     """Prints a thank you message to the user."""
@@ -112,11 +114,15 @@ def main() -> None:
         end_time = time.perf_counter()
         print_longest_substring_length(length)
         print_runtime((end_time - start_time) * 1000)  # Convert to milliseconds
+        print_solution_title()
         print_intuition()
         print_approach()
         print_complexity()
-        # print_code()
+        print_code()
     except Exception as e:
         print(f"An error occurred: {e}")
     finally:
         print_thank_you_message()
+
+if __name__ == "__main__":      
+    main()
