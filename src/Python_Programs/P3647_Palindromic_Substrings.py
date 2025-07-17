@@ -64,26 +64,46 @@ def print_runtime(runtime: float) -> None:
 
 def print_solution_title() -> None:
     """Prints the title of the solution."""
-    print("\nSolution Title: Count of Palindromic Substrings")
-    print("This solution counts the number of palindromic substrings in a given string using a center expansion approach.")
-
+    print("\nSolution Title: Count of Palindromic Substrings using a Center Expansion Approach")
+    
 def print_intuition() -> None:
     """Prints the intuition behind the algorithm."""
     print("\nIntuition:")
-    print("The algorithm expands around each character (and between characters) to find palindromes.")
-    print("For each character, it checks for both odd and even length palindromes by expanding outwards until the characters no longer match.")
+    print("The algorithm expands around each character to find odd-length palindromes.")
+    print("The algorithm also expands outwards from sequential pairs to find even-length palindromes.")
+    print("For single characters, it checks for both odd length palindromes by expanding outwards until the characters no longer match.")
+    print("For sequential pairs of characters, it checks for even length palindromes in a similar manner.")
 
 def print_approach() -> None:
     """Prints the approach used in the solution."""
     print("\nApproach:")
+    print("Odd length palindromes: (expand_around_center(i, i))")
     print("1. For each character in the string, treat it as a center and expand outwards to find palindromic substrings.")
+    print("2. Count each valid palindrome found during the expansion.")
+    print("3. Return the total count of palindromic substrings.")
+    print("Even length palindromes: (expand_around_center(i, i + 1))")
+    print("1. For each pair of sequential characters in the string, treat the space between them as a center and expand outwards to find palindromic substrings.")
     print("2. Count each valid palindrome found during the expansion.")
     print("3. Return the total count of palindromic substrings.")
 
 def print_complexity() -> None:
     """Prints the time and space complexity of the solution."""
-    print("\nTime Complexity: O(n^2)")
-    print("Space Complexity: O(1) - The algorithm uses a constant amount of space for counting.")
+    print("\nTime Complexity: O(n²)")
+    print("\nTime Complexity Derivation:")
+    print("1. Outer loop: We iterate through each character in the string → O(n)")
+    print("2. For each character, we call expand_around_center twice:")
+    print("   - Once for odd-length palindromes: expand_around_center(i, i)")
+    print("   - Once for even-length palindromes: expand_around_center(i, i + 1)")
+    print("3. Each expand_around_center call can potentially expand up to n/2 times in the worst case")
+    print("4. Mathematical analysis:")
+    print("   - Best case: Each expansion stops immediately → O(n)")
+    print("   - Worst case: String like 'aaaa...' where every expansion goes to full length")
+    print("   - For position i, maximum expansion is min(i, n-1-i)")
+    print("   - Total operations: Σ(i=0 to n-1) min(i, n-1-i) ≈ n²/4")
+    print("   - Therefore: O(n²)")
+    print("\nSpace Complexity: O(1) - The algorithm uses a constant amount of space for counting.")
+    print("- Only variables: count, left, right pointers")
+    print("- No additional data structures that grow with input size")
 
 def print_code() -> None:
     """Prints the code of the solution."""
