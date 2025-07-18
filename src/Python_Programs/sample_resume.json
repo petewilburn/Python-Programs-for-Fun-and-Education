@@ -1,0 +1,90 @@
+{
+  "personal_info": {
+    "name": "Jane Smith",
+    "email": "jane.smith@email.com",
+    "phone": "+1-555-0123",
+    "address": "123 Tech Street, Silicon Valley, CA 94000",
+    "linkedin": "linkedin.com/in/janesmith",
+    "website": "janesmith.dev",
+    "summary": "Experienced software engineer with 5+ years developing scalable web applications and leading cross-functional teams. Passionate about clean code, user experience, and innovative technology solutions."
+  },
+  "objective": "Seeking a senior software engineering role where I can leverage my expertise in full-stack development and team leadership to drive impactful technology solutions.",
+  "education": [
+    {
+      "degree": "Master of Science",
+      "field_of_study": "Computer Science",
+      "institution": "Stanford University",
+      "year": "2019",
+      "gpa": "3.9"
+    },
+    {
+      "degree": "Bachelor of Science",
+      "field_of_study": "Software Engineering",
+      "institution": "UC Berkeley",
+      "year": "2017",
+      "gpa": "3.7"
+    }
+  ],
+  "work_experience": [
+    {
+      "position": "Senior Software Engineer",
+      "company": "TechCorp Inc.",
+      "start_date": "2021",
+      "end_date": "Present",
+      "description": "Lead development of microservices architecture serving 1M+ users daily. Mentor junior developers and collaborate with product teams on feature planning.",
+      "achievements": [
+        "Reduced system latency by 40% through database optimization",
+        "Led migration to containerized deployment, improving deployment speed by 60%",
+        "Mentored 5 junior developers, with 3 receiving promotions"
+      ]
+    },
+    {
+      "position": "Software Engineer",
+      "company": "StartupXYZ",
+      "start_date": "2019",
+      "end_date": "2021",
+      "description": "Developed full-stack web applications using React and Node.js. Implemented CI/CD pipelines and automated testing frameworks.",
+      "achievements": [
+        "Built user authentication system supporting OAuth and SSO",
+        "Implemented automated testing, increasing code coverage from 30% to 90%",
+        "Contributed to 300% user growth over 2 years"
+      ]
+    }
+  ],
+  "skills": {
+    "Programming Languages": ["Python", "JavaScript", "TypeScript", "Java", "Go"],
+    "Web Technologies": ["React", "Node.js", "Django", "FastAPI", "HTML/CSS"],
+    "Databases": ["PostgreSQL", "MongoDB", "Redis", "Elasticsearch"],
+    "Cloud & DevOps": ["AWS", "Docker", "Kubernetes", "Jenkins", "Terraform"],
+    "Tools": ["Git", "JIRA", "Figma", "Postman", "VS Code"]
+  },
+  "projects": [
+    {
+      "name": "E-Commerce Analytics Platform",
+      "description": "Built a real-time analytics dashboard for e-commerce businesses, processing 100K+ transactions daily with interactive visualizations.",
+      "technologies": ["Python", "Django", "React", "PostgreSQL", "Redis", "AWS"]
+    },
+    {
+      "name": "Open Source API Gateway",
+      "description": "Contributed to an open-source API gateway project used by 500+ companies worldwide. Added rate limiting and authentication features.",
+      "technologies": ["Go", "Docker", "Kubernetes", "MongoDB"]
+    }
+  ],
+  "certifications": [
+    {
+      "name": "AWS Certified Solutions Architect",
+      "issuer": "Amazon Web Services",
+      "date": "2023"
+    },
+    {
+      "name": "Certified Kubernetes Administrator",
+      "issuer": "Cloud Native Computing Foundation",
+      "date": "2022"
+    },
+    {
+      "name": "Google Cloud Professional Developer",
+      "issuer": "Google Cloud",
+      "date": "2021"
+    }
+  ]
+}
