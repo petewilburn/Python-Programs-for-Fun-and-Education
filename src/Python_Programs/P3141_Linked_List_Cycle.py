@@ -25,6 +25,12 @@ class ListNode:
 
 class Solution:
     def hasCycle(self, head: ListNode) -> bool:
+        """
+        Floyd's Cycle-Finding Algorithm implementation.
+        
+        Uses two pointers moving at different speeds to detect cycles in linked lists.
+        This educational version includes type hints and detailed comments for learning.
+        """
         slow = head
         fast = head
         while fast and fast.next:
@@ -33,7 +39,7 @@ class Solution:
             if slow == fast:
                 return True
         return False
-    
+
 class IO:
     @staticmethod
     def print_welcome_message() -> None:
@@ -185,6 +191,11 @@ class IO:
         print(f"\n⏱️ Runtime: {runtime:.6f} milliseconds")
 
     @staticmethod
+    def print_solution_title() -> None:
+        """Prints the title of the solution."""
+        print("\nSolution: Linked List Cycle Detection using Floyd's Cycle-Finding Algorithm")
+
+    @staticmethod
     def print_intuition() -> None:
         """Prints the intuition behind Floyd's Cycle-Finding Algorithm."""
         print("\nIntuition (Floyd's Cycle-Finding Algorithm):")
@@ -195,10 +206,6 @@ class IO:
         print("1. **If there's NO cycle**: The fast runner will reach the end first")
         print("2. **If there's a cycle**: The fast runner will eventually lap the slow runner")
         print("3. **Meeting point**: When they meet, we've detected a cycle!")
-        print("\nWhy this works:")
-        print("- In a cycle, both pointers will eventually enter the cyclic part")
-        print("- The fast pointer gains 1 step on the slow pointer each iteration")
-        print("- In a finite cycle, the fast pointer will eventually catch up")
         print("\nVisualization of the chase:")
         print("```")
         print("Step 1: S   F       (S=slow, F=fast)")
@@ -207,6 +214,21 @@ class IO:
         print("Step 4:    S  F     (F wraps around in cycle)")
         print("Step 5:     SF      (They meet! Cycle detected)")
         print("```")
+
+    @staticmethod
+    def print_approach() -> None:
+        """Prints the approach used in Floyd's Cycle-Finding Algorithm."""
+        print("\nApproach (Floyd's Cycle-Finding Algorithm):")
+        print("1. **Initialize Two Pointers**: slow = head, fast = head")
+        print("2. **Move at Different Speeds**: slow advances 1 step, fast advances 2 steps")
+        print("3. **Loop Condition**: Continue while fast != null AND fast.next != null")
+        print("4. **Cycle Detection**: If slow == fast, cycle detected → return True")
+        print("5. **No Cycle**: If fast reaches end (null) → return False")
+        print("\nImplementation details:")
+        print("• Both pointers start at head for simplicity")
+        print("• Check 'fast and fast.next' to avoid null pointer exceptions")
+        print("• Meeting in cycle is guaranteed due to speed difference")
+        print("• Algorithm terminates in O(n) time with O(1) space")
 
     @staticmethod
     def print_code() -> None:
@@ -239,29 +261,29 @@ class IO:
     def print_complexity() -> None:
         """Prints the time and space complexity analysis."""
         print("\nComplexity Analysis:")
-        print("Time Complexity: O(n), where n is the number of nodes")
-        print("\nDetailed Time Analysis:")
-        print("**Case 1: No Cycle**")
-        print("- Fast pointer traverses at most n/2 nodes before reaching end")
-        print("- Time: O(n)")
-        print("\n**Case 2: Cycle Exists**")
-        print("- Let's say cycle length is C, and non-cyclic part is N")
-        print("- Both pointers enter the cycle within N steps")
-        print("- In the cycle, fast pointer gains 1 step per iteration")
-        print("- Maximum iterations to meet: C (worst case)")
-        print("- Total time: O(N + C) = O(n)")
-        print("\n**Mathematical Proof:**")
-        print("- If slow pointer travels distance d, fast pointer travels 2d")
-        print("- When they meet in cycle: 2d - d = kC (where k is number of cycles)")
-        print("- Therefore: d = kC, meaning they meet after k full cycles")
-        print("- Since k ≤ n/C, total time is O(n)")
+        print("Time Complexity: O(n), where:")
+        print("- n = number of nodes in the linked list")
+        print("\nTime Complexity Derivation:")
+        print("1. **No Cycle Case**: Fast pointer traverses at most n/2 nodes → O(n)")
+        print("2. **Cycle Case**: Both pointers enter cycle within n steps → O(n)")
+        print("3. **Meeting in Cycle**: Fast pointer gains 1 step per iteration")
+        print("4. **Maximum Iterations**: At most cycle length C iterations to meet")
+        print("5. **Total**: O(n + C) = O(n) since C ≤ n")
+        print("\nMathematical Proof:")
+        print("- When pointers meet: distance(slow) × 2 = distance(fast)")
+        print("- In cycle: 2d - d = kC (where k = number of fast pointer cycles)")
+        print("- Therefore: d = kC, meaning they meet after k complete cycles")
+        print("- Since k ≤ n/C, total time remains O(n)")
         print("\nSpace Complexity: O(1)")
-        print("- Only uses two pointer variables")
+        print("\nSpace Complexity Breakdown:")
+        print("- Two pointer variables: O(1) space")
         print("- No additional data structures needed")
+        print("- No recursive call stack (iterative solution)")
         print("- Constant space regardless of input size")
         print("\nComparison with alternatives:")
-        print("- Hash Set approach: O(n) time, O(n) space")
-        print("- Floyd's algorithm: O(n) time, O(1) space ← Optimal!")
+        print("- Hash Set approach: O(n) time, O(n) space - uses extra memory")
+        print("- Floyd's algorithm: O(n) time, O(1) space - optimal solution")
+        print("- Brute force: O(n²) time - checking every possible cycle start")
 
     @staticmethod
     def print_edge_cases() -> None:
@@ -320,6 +342,7 @@ def main():
         IO.print_result(has_cycle)
         IO.print_runtime((end_time - start_time) * 1000)  # Convert to milliseconds
         IO.print_intuition()
+        IO.print_approach()
         IO.print_code()
         IO.print_complexity()
         IO.print_edge_cases()
