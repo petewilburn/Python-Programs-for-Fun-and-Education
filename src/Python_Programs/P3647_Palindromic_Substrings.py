@@ -48,10 +48,10 @@ def prompt_user_for_string() -> str:
     while count < 3:                                                      # Allow up to 3 attempts for valid input
         count += 1
         user_input = input("Enter a string to count palindromic substrings: ")
-        if isinstance(user_input, str):
+        if user_input.strip():  # Check if string is not empty after stripping whitespace
             return user_input
         else:
-            print("Invalid input. Please enter a valid string.")
+            print("Invalid input. Please enter a non-empty string.")
     raise ValueError("Too many invalid attempts. Exiting the program.")   # Raise an error if too many invalid attempts
 
 def print_palindromic_substring_count(count: int) -> None:
@@ -155,6 +155,5 @@ if __name__ == "__main__":
 # This code implements a solution to count the number of palindromic substrings in a given string using a center expansion approach.
 # The program prompts the user for a string, counts the palindromic substrings,
 # and prints the count along with the runtime of the algorithm.
-# The solution has a time complexity of O(n^2) and a space complexity of O
-#(1), making it efficient for moderate-sized strings.
+# The solution has a time complexity of O(n^2) and a space complexity of O(1), making it efficient for moderate-sized strings.
 
