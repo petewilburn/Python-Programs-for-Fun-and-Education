@@ -1,0 +1,68 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Virtual environments
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# IDE and Editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Personal scripts and configurations
+activate_*.bat
+activate_*.ps1
+config_*.json
+*.env.local
+*.env.development
+*.env.production
+
+# Temporary files
+*.tmp
+*.temp
+*.log
+
+# Data files (often contain sensitive information)
+*.csv
+*.xlsx
+*.json
+options_contracts_*.csv
+
+# Documentation builds
+docs/_build/
