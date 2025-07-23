@@ -34,28 +34,24 @@ The default dark theme applied to all charts uses:
 For maximum readability in dark environments:
 
 ```mermaid
-%%{init: {'theme':'dark', 'themeVariables': {'primaryColor':'#ffffff','primaryTextColor':'#000000','primaryBorderColor':'#ffffff','lineColor':'#ffffff','secondaryColor':'#00ff00','tertiaryColor':'#ffff00','background':'#000000','mainBkg':'#333333','secondBkg':'#444444','tertiaryBkg':'#555555'}}}%%
 ```
 
 ### 2. Blue Professional Theme
 Corporate-friendly dark theme:
 
 ```mermaid
-%%{init: {'theme':'dark', 'themeVariables': {'primaryColor':'#2563eb','primaryTextColor':'#ffffff','primaryBorderColor':'#3b82f6','lineColor':'#64748b','secondaryColor':'#0ea5e9','tertiaryColor':'#06b6d4','background':'#0f172a','mainBkg':'#1e293b','secondBkg':'#334155','tertiaryBkg':'#475569'}}}%%
 ```
 
 ### 3. GitHub Compatible Theme
 Optimized for GitHub's dark theme:
 
 ```mermaid
-%%{init: {'theme':'dark', 'themeVariables': {'primaryColor':'#238636','primaryTextColor':'#f0f6fc','primaryBorderColor':'#30a46c','lineColor':'#7d8590','secondaryColor':'#1f6feb','tertiaryColor':'#a5a5a5','background':'#0d1117','mainBkg':'#21262d','secondBkg':'#30363d','tertiaryBkg':'#484f58'}}}%%
 ```
 
 ### 4. Neutral Adaptive Theme
 Works well in both light and dark modes:
 
 ```mermaid
-%%{init: {'theme':'neutral', 'themeVariables': {'primaryColor':'#606060','primaryTextColor':'#ffffff','primaryBorderColor':'#808080','lineColor':'#404040','secondaryColor':'#909090','tertiaryColor':'#a0a0a0'}}}%%
 ```
 
 ## Files Updated

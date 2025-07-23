@@ -7,7 +7,6 @@ Interactive Brokers provides multiple API interfaces, each designed for differen
 ## IBKR API Overview: Architecture Comparison
 
 ```mermaid
-%%{init: {'theme':'dark', 'themeVariables': {'primaryColor':'#4f46e5','primaryTextColor':'#ffffff','primaryBorderColor':'#6366f1','lineColor':'#6b7280','secondaryColor':'#10b981','tertiaryColor':'#f59e0b','background':'#1f2937','mainBkg':'#374151','secondBkg':'#4b5563','tertiaryBkg':'#6b7280'}}}%%
 graph TB
     subgraph "IBKR Trading Infrastructure"
         IBKRCore[IBKR Core Systems<br/>Order Management & Risk]
@@ -115,7 +114,6 @@ class IBKROptionsChainHandler:
 
 #### **3. Latency Characteristics**
 ```mermaid
-%%{init: {'theme':'dark', 'themeVariables': {'primaryColor':'#4f46e5','primaryTextColor':'#ffffff','primaryBorderColor':'#6366f1','lineColor':'#6b7280','secondaryColor':'#10b981','tertiaryColor':'#f59e0b','background':'#1f2937','mainBkg':'#374151','secondBkg':'#4b5563','tertiaryBkg':'#6b7280'}}}%%
 sequenceDiagram
     participant Client
     participant Gateway
@@ -265,7 +263,6 @@ client.reqMktData(1, contract, "", False, False, [])
 
 #### **3. Deployment Challenges**
 ```mermaid
-%%{init: {'theme':'dark', 'themeVariables': {'primaryColor':'#4f46e5','primaryTextColor':'#ffffff','primaryBorderColor':'#6366f1','lineColor':'#6b7280','secondaryColor':'#10b981','tertiaryColor':'#f59e0b','background':'#1f2937','mainBkg':'#374151','secondBkg':'#4b5563','tertiaryBkg':'#6b7280'}}}%%
 graph TB
     subgraph "TWS API Deployment"
         App[Trading Application]
@@ -388,7 +385,6 @@ class UnifiedTradingInterface:
 
 **2. Production Deployment Challenges**
 ```mermaid
-%%{init: {'theme':'dark', 'themeVariables': {'primaryColor':'#4f46e5','primaryTextColor':'#ffffff','primaryBorderColor':'#6366f1','lineColor':'#6b7280','secondaryColor':'#10b981','tertiaryColor':'#f59e0b','background':'#1f2937','mainBkg':'#374151','secondBkg':'#4b5563','tertiaryBkg':'#6b7280'}}}%%
 graph TB
     subgraph "Python Production Issues"
         GIL[Global Interpreter Lock<br/>Threading Limitations]
@@ -592,7 +588,6 @@ class TradingDashboard {
 The optimal solution often involves a hybrid approach, leveraging each language's strengths:
 
 ```mermaid
-%%{init: {'theme':'dark', 'themeVariables': {'primaryColor':'#4f46e5','primaryTextColor':'#ffffff','primaryBorderColor':'#6366f1','lineColor':'#6b7280','secondaryColor':'#10b981','tertiaryColor':'#f59e0b','background':'#1f2937','mainBkg':'#374151','secondBkg':'#4b5563','tertiaryBkg':'#6b7280'}}}%%
 graph TB
     subgraph "Hybrid Trading System Architecture"
         subgraph "Frontend Layer - JavaScript/TypeScript"
@@ -739,7 +734,6 @@ private:
 ### Decision Matrix Based on Requirements
 
 ```mermaid
-%%{init: {'theme':'dark', 'themeVariables': {'primaryColor':'#4f46e5','primaryTextColor':'#ffffff','primaryBorderColor':'#6366f1','lineColor':'#6b7280','secondaryColor':'#10b981','tertiaryColor':'#f59e0b','background':'#1f2937','mainBkg':'#374151','secondBkg':'#4b5563','tertiaryBkg':'#6b7280'}}}%%
 flowchart TD
     Start[Trading System Requirements] --> Latency{Latency Requirements?}
     
@@ -848,7 +842,6 @@ class PortfolioManager:
 ### Throughput Analysis (Messages/Second)
 
 ```mermaid
-%%{init: {'theme':'dark', 'themeVariables': {'primaryColor':'#4f46e5','primaryTextColor':'#ffffff','primaryBorderColor':'#6366f1','lineColor':'#6b7280','secondaryColor':'#10b981','tertiaryColor':'#f59e0b','background':'#1f2937','mainBkg':'#374151','secondBkg':'#4b5563','tertiaryBkg':'#6b7280'}}}%%
 bar
     title API Throughput Comparison
     x-axis [WebAPI, FIX API, TWS API]
@@ -894,7 +887,6 @@ bar
 ### Industry Evolution
 
 ```mermaid
-%%{init: {'theme':'dark', 'themeVariables': {'primaryColor':'#4f46e5','primaryTextColor':'#ffffff','primaryBorderColor':'#6366f1','lineColor':'#6b7280','secondaryColor':'#10b981','tertiaryColor':'#f59e0b','background':'#1f2937','mainBkg':'#374151','secondBkg':'#4b5563','tertiaryBkg':'#6b7280'}}}%%
 timeline
     title API Evolution in Algorithmic Trading
     
