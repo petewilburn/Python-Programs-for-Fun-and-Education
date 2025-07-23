@@ -9,6 +9,7 @@ While individual IBKR WebAPI programs like our options chain handler demonstrate
 Modern trading systems employ microservices architecture to achieve scalability, maintainability, and fault tolerance. Each service focuses on a specific domain while communicating through well-defined APIs.
 
 ```mermaid
+%%{init: {'theme':'dark', 'themeVariables': {'primaryColor':'#4f46e5','primaryTextColor':'#ffffff','primaryBorderColor':'#6366f1','lineColor':'#6b7280','secondaryColor':'#10b981','tertiaryColor':'#f59e0b','background':'#1f2937','mainBkg':'#374151','secondBkg':'#4b5563','tertiaryBkg':'#6b7280'}}}%%
 graph TB
     subgraph "External Systems"
         IBKR[IBKR Client Portal Gateway<br/>localhost:5001]
@@ -180,6 +181,7 @@ class PositionMonitorService:
 Orchestrates trading strategies using multiple data sources:
 
 ```mermaid
+%%{init: {'theme':'dark', 'themeVariables': {'primaryColor':'#4f46e5','primaryTextColor':'#ffffff','primaryBorderColor':'#6366f1','lineColor':'#6b7280','secondaryColor':'#10b981','tertiaryColor':'#f59e0b','background':'#1f2937','mainBkg':'#374151','secondBkg':'#4b5563','tertiaryBkg':'#6b7280'}}}%%
 graph TD
     subgraph "Strategy Engine Architecture"
         StrategyMgr[Strategy Manager<br/>Orchestration]
@@ -266,6 +268,7 @@ class RiskManagementEngine:
 The system uses message queues for asynchronous communication:
 
 ```mermaid
+%%{init: {'theme':'dark', 'themeVariables': {'primaryColor':'#4f46e5','primaryTextColor':'#ffffff','primaryBorderColor':'#6366f1','lineColor':'#6b7280','secondaryColor':'#10b981','tertiaryColor':'#f59e0b','background':'#1f2937','mainBkg':'#374151','secondBkg':'#4b5563','tertiaryBkg':'#6b7280'}}}%%
 sequenceDiagram
     participant OCS as Options Chain Service
     participant MB as Message Broker
@@ -299,6 +302,7 @@ sequenceDiagram
 Different data types require specialized storage solutions:
 
 ```mermaid
+%%{init: {'theme':'dark', 'themeVariables': {'primaryColor':'#4f46e5','primaryTextColor':'#ffffff','primaryBorderColor':'#6366f1','lineColor':'#6b7280','secondaryColor':'#10b981','tertiaryColor':'#f59e0b','background':'#1f2937','mainBkg':'#374151','secondBkg':'#4b5563','tertiaryBkg':'#6b7280'}}}%%
 graph TB
     subgraph "Data Sources"
         OptionsData[Options Chain Data<br/>Time Series]
@@ -363,6 +367,7 @@ graph TB
 The system deploys using Kubernetes for scalability and reliability:
 
 ```mermaid
+%%{init: {'theme':'dark', 'themeVariables': {'primaryColor':'#4f46e5','primaryTextColor':'#ffffff','primaryBorderColor':'#6366f1','lineColor':'#6b7280','secondaryColor':'#10b981','tertiaryColor':'#f59e0b','background':'#1f2937','mainBkg':'#374151','secondBkg':'#4b5563','tertiaryBkg':'#6b7280'}}}%%
 graph TB
     subgraph "Kubernetes Cluster"
         subgraph "Ingestion Namespace"
@@ -536,6 +541,7 @@ class SystemConfig:
 Comprehensive monitoring across all system components:
 
 ```mermaid
+%%{init: {'theme':'dark', 'themeVariables': {'primaryColor':'#4f46e5','primaryTextColor':'#ffffff','primaryBorderColor':'#6366f1','lineColor':'#6b7280','secondaryColor':'#10b981','tertiaryColor':'#f59e0b','background':'#1f2937','mainBkg':'#374151','secondBkg':'#4b5563','tertiaryBkg':'#6b7280'}}}%%
 graph TB
     subgraph "Application Metrics"
         AppMetrics[Business Metrics<br/>P&L, Positions, Orders]
@@ -599,6 +605,7 @@ graph TB
 Multi-layered security approach for financial systems:
 
 ```mermaid
+%%{init: {'theme':'dark', 'themeVariables': {'primaryColor':'#4f46e5','primaryTextColor':'#ffffff','primaryBorderColor':'#6366f1','lineColor':'#6b7280','secondaryColor':'#10b981','tertiaryColor':'#f59e0b','background':'#1f2937','mainBkg':'#374151','secondBkg':'#4b5563','tertiaryBkg':'#6b7280'}}}%%
 graph TB
     subgraph "Security Layers"
         subgraph "Network Security"

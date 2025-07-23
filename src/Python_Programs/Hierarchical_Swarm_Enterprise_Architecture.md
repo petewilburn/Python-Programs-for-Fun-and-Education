@@ -9,6 +9,7 @@ This article explores how hierarchical agentic swarms integrate into production-
 ## System Architecture Overview: Multi-Tier Integration
 
 ```mermaid
+%%{init: {'theme':'dark', 'themeVariables': {'primaryColor':'#4f46e5','primaryTextColor':'#ffffff','primaryBorderColor':'#6366f1','lineColor':'#6b7280','secondaryColor':'#10b981','tertiaryColor':'#f59e0b','background':'#1f2937','mainBkg':'#374151','secondBkg':'#4b5563','tertiaryBkg':'#6b7280'}}}%%
 graph TB
     subgraph "Enterprise Trading Architecture"
         subgraph "Presentation Layer"
@@ -152,6 +153,7 @@ graph TB
 The hierarchical swarm operates within an event-driven ecosystem where market events trigger cascading responses across multiple system layers:
 
 ```mermaid
+%%{init: {'theme':'dark', 'themeVariables': {'primaryColor':'#4f46e5','primaryTextColor':'#ffffff','primaryBorderColor':'#6366f1','lineColor':'#6b7280','secondaryColor':'#10b981','tertiaryColor':'#f59e0b','background':'#1f2937','mainBkg':'#374151','secondBkg':'#4b5563','tertiaryBkg':'#6b7280'}}}%%
 sequenceDiagram
     participant Market as Market Data Feed
     participant Gateway as API Gateway
@@ -202,6 +204,7 @@ sequenceDiagram
 The swarm architecture embraces microservices principles, with each agent type potentially deployed as independent services:
 
 ```mermaid
+%%{init: {'theme':'dark', 'themeVariables': {'primaryColor':'#4f46e5','primaryTextColor':'#ffffff','primaryBorderColor':'#6366f1','lineColor':'#6b7280','secondaryColor':'#10b981','tertiaryColor':'#f59e0b','background':'#1f2937','mainBkg':'#374151','secondBkg':'#4b5563','tertiaryBkg':'#6b7280'}}}%%
 graph LR
     subgraph "Swarm Microservices Architecture"
         subgraph "Core Orchestration"
@@ -277,6 +280,7 @@ graph LR
 The swarm generates and consumes multiple data streams, requiring sophisticated data pipeline integration:
 
 ```mermaid
+%%{init: {'theme':'dark', 'themeVariables': {'primaryColor':'#4f46e5','primaryTextColor':'#ffffff','primaryBorderColor':'#6366f1','lineColor':'#6b7280','secondaryColor':'#10b981','tertiaryColor':'#f59e0b','background':'#1f2937','mainBkg':'#374151','secondBkg':'#4b5563','tertiaryBkg':'#6b7280'}}}%%
 flowchart TB
     subgraph "Data Sources"
         MarketData[Market Data Streams<br/>Real-time Prices]
@@ -378,6 +382,7 @@ flowchart TB
 ### 1. **Container Orchestration with Kubernetes**
 
 ```mermaid
+%%{init: {'theme':'dark', 'themeVariables': {'primaryColor':'#4f46e5','primaryTextColor':'#ffffff','primaryBorderColor':'#6366f1','lineColor':'#6b7280','secondaryColor':'#10b981','tertiaryColor':'#f59e0b','background':'#1f2937','mainBkg':'#374151','secondBkg':'#4b5563','tertiaryBkg':'#6b7280'}}}%%
 graph TB
     subgraph "Kubernetes Cluster"
         subgraph "Ingress Layer"
@@ -502,6 +507,7 @@ graph TB
 ### 2. **Scalability and Performance Patterns**
 
 ```mermaid
+%%{init: {'theme':'dark', 'themeVariables': {'primaryColor':'#4f46e5','primaryTextColor':'#ffffff','primaryBorderColor':'#6366f1','lineColor':'#6b7280','secondaryColor':'#10b981','tertiaryColor':'#f59e0b','background':'#1f2937','mainBkg':'#374151','secondBkg':'#4b5563','tertiaryBkg':'#6b7280'}}}%%
 graph TB
     subgraph "Auto-Scaling Architecture"
         subgraph "Load Balancing"
@@ -587,6 +593,7 @@ graph TB
 ### 1. **Multi-Asset Class Trading Platform**
 
 ```mermaid
+%%{init: {'theme':'dark', 'themeVariables': {'primaryColor':'#4f46e5','primaryTextColor':'#ffffff','primaryBorderColor':'#6366f1','lineColor':'#6b7280','secondaryColor':'#10b981','tertiaryColor':'#f59e0b','background':'#1f2937','mainBkg':'#374151','secondBkg':'#4b5563','tertiaryBkg':'#6b7280'}}}%%
 graph LR
     subgraph "Multi-Asset Trading Architecture"
         subgraph "Asset Class Swarms"
@@ -656,6 +663,7 @@ graph LR
 ### 2. **Institutional Multi-Tenant Platform**
 
 ```mermaid
+%%{init: {'theme':'dark', 'themeVariables': {'primaryColor':'#4f46e5','primaryTextColor':'#ffffff','primaryBorderColor':'#6366f1','lineColor':'#6b7280','secondaryColor':'#10b981','tertiaryColor':'#f59e0b','background':'#1f2937','mainBkg':'#374151','secondBkg':'#4b5563','tertiaryBkg':'#6b7280'}}}%%
 graph TB
     subgraph "Multi-Tenant Swarm Platform"
         subgraph "Tenant Isolation"
@@ -752,6 +760,7 @@ graph TB
 ### 1. **Event Sourcing and CQRS Integration**
 
 ```mermaid
+%%{init: {'theme':'dark', 'themeVariables': {'primaryColor':'#4f46e5','primaryTextColor':'#ffffff','primaryBorderColor':'#6366f1','lineColor':'#6b7280','secondaryColor':'#10b981','tertiaryColor':'#f59e0b','background':'#1f2937','mainBkg':'#374151','secondBkg':'#4b5563','tertiaryBkg':'#6b7280'}}}%%
 graph TB
     subgraph "Event-Driven Swarm Architecture"
         subgraph "Command Side (Write)"
@@ -834,6 +843,7 @@ graph TB
 ### 2. **Machine Learning Integration Pipeline**
 
 ```mermaid
+%%{init: {'theme':'dark', 'themeVariables': {'primaryColor':'#4f46e5','primaryTextColor':'#ffffff','primaryBorderColor':'#6366f1','lineColor':'#6b7280','secondaryColor':'#10b981','tertiaryColor':'#f59e0b','background':'#1f2937','mainBkg':'#374151','secondBkg':'#4b5563','tertiaryBkg':'#6b7280'}}}%%
 flowchart TB
     subgraph "ML-Enhanced Swarm Architecture"
         subgraph "Data Collection"
@@ -922,6 +932,7 @@ flowchart TB
 ### 1. **Monitoring and Observability**
 
 ```mermaid
+%%{init: {'theme':'dark', 'themeVariables': {'primaryColor':'#4f46e5','primaryTextColor':'#ffffff','primaryBorderColor':'#6366f1','lineColor':'#6b7280','secondaryColor':'#10b981','tertiaryColor':'#f59e0b','background':'#1f2937','mainBkg':'#374151','secondBkg':'#4b5563','tertiaryBkg':'#6b7280'}}}%%
 graph TB
     subgraph "Comprehensive Observability Stack"
         subgraph "Metrics Collection"
@@ -1000,6 +1011,7 @@ graph TB
 ### 2. **Security and Compliance Architecture**
 
 ```mermaid
+%%{init: {'theme':'dark', 'themeVariables': {'primaryColor':'#4f46e5','primaryTextColor':'#ffffff','primaryBorderColor':'#6366f1','lineColor':'#6b7280','secondaryColor':'#10b981','tertiaryColor':'#f59e0b','background':'#1f2937','mainBkg':'#374151','secondBkg':'#4b5563','tertiaryBkg':'#6b7280'}}}%%
 graph LR
     subgraph "Security-First Swarm Architecture"
         subgraph "Identity & Access"
