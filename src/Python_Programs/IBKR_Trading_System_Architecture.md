@@ -87,21 +87,6 @@ graph TB
     StrategyEngine --> Monitoring
     TradeExec --> AlertSvc
     RiskEngine --> AlertSvc
-    
-    %% Styling
-    classDef external fill:#e1f5fe
-    classDef ingestion fill:#f3e5f5
-    classDef business fill:#e8f5e8
-    classDef execution fill:#fff3e0
-    classDef data fill:#fce4ec
-    classDef monitoring fill:#f1f8e9
-    
-    class IBKR,MarketData,NewsAPI external
-    class OptionsChain,PriceData,PositionSvc,NewsIngestion ingestion
-    class StrategyEngine,RiskEngine,SignalGen,Portfolio business
-    class OrderMgmt,TradeExec,Compliance execution
-    class TimeSeriesDB,RelationalDB,CacheLayer,BlobStorage data
-    class Dashboard,API,Monitoring,AlertSvc monitoring
 ```
 
 ## Component Deep Dive: Service Responsibilities
@@ -219,14 +204,6 @@ graph TD
         SignalGen --> PosSizing
         PosSizing --> TimingLogic
     end
-    
-    classDef strategy fill:#e8f5e8
-    classDef data fill:#e1f5fe
-    classDef component fill:#fff3e0
-    
-    class OptStrat,MomStrat,ArbStrat,MLStrat strategy
-    class OptData,PriceHist,NewsData,EconData data
-    class SignalGen,PosSizing,TimingLogic component
 ```
 
 #### **Risk Management Engine**
@@ -324,6 +301,7 @@ graph TB
         ML[ML Pipeline<br/>Model Training]
         Reporting[Report Generator<br/>Performance Reports]
     end
+
     
     %% Data flow to storage
     OptionsData --> TimeSeriesDB
@@ -348,14 +326,6 @@ graph TB
     PostgreSQL --> ETL
     MongoDB --> ML
     S3 --> Reporting
-    
-    classDef source fill:#e1f5fe
-    classDef storage fill:#fce4ec
-    classDef processing fill:#e8f5e8
-    
-    class OptionsData,Prices,Orders,Positions,News,Logs source
-    class TimeSeriesDB,PostgreSQL,MongoDB,Redis,S3,Elasticsearch storage
-    class ETL,Analytics,ML,Reporting processing
 ```
 
 ## Deployment Architecture: Container Orchestration
@@ -432,16 +402,6 @@ graph TB
     Monitoring --> OptPod
     Monitoring --> StratPod
     Monitoring --> TradePod
-    
-    classDef pod fill:#e8f5e8
-    classDef data fill:#fce4ec
-    classDef infra fill:#f1f8e9
-    classDef external fill:#e1f5fe
-    
-    class OptPod,PricePod,NewsPod,StratPod,RiskPod,PortPod,OrderPod,TradePod,CompPod pod
-    class PostgresPod,InfluxPod,RedisPod data
-    class Ingress,ServiceMesh,Monitoring infra
-    class Users,IBKR,MarketData external
 ```
 
 ## Service Communication Patterns
@@ -585,14 +545,6 @@ graph TB
     %% Tracing
     AppMetrics --> Jaeger
     TechMetrics --> Jaeger
-    
-    classDef metrics fill:#e1f5fe
-    classDef monitoring fill:#e8f5e8
-    classDef alerting fill:#fff3e0
-    
-    class AppMetrics,TechMetrics,IBKRMetrics,K8sMetrics,DBMetrics,NetworkMetrics metrics
-    class Prometheus,Grafana,AlertManager,Jaeger monitoring
-    class Email,Slack,PagerDuty,Dashboard alerting
 ```
 
 ## Security Architecture
@@ -652,12 +604,6 @@ graph TB
     %% Insider threat mitigation
     Insider -.->|Controlled by| RBAC
     RBAC -.->|Monitored by| Audit
-    
-    classDef security fill:#ffebee
-    classDef threat fill:#f3e5f5
-    
-    class WAF,VPC,TLS,OAuth,RBAC,JWT,Encryption,Vault,Backup,Audit,Compliance,Monitoring security
-    class Attackers,Insider threat
 ```
 
 ## Development and Testing Strategy

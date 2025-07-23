@@ -46,15 +46,6 @@ graph TB
     Native --> HFTApp
     
     %% Styling
-    classDef core fill:#e8f5e8
-    classDef gateway fill:#e1f5fe
-    classDef protocol fill:#fff3e0
-    classDef app fill:#f3e5f5
-    
-    class IBKRCore core
-    class WebGW,FIXGW,TWSGW gateway
-    class REST,FIX,Native protocol
-    class WebApp,TradingApp,HFTApp app
 ```
 
 ## WebAPI (Client Portal Gateway): Modern Web-First Approach
@@ -278,9 +269,6 @@ graph TB
             Resources[High Resource Usage<br/>Memory & CPU Intensive]
         end
     end
-    
-    classDef issue fill:#ffebee
-    class Desktop,Timeout,Resources issue
 ```
 
 ## Comprehensive API Comparison Matrix
@@ -404,12 +392,6 @@ graph TB
     Memory --> Monitoring
     Speed --> Cython
     Deploy --> Docker
-    
-    classDef issue fill:#ffebee
-    classDef solution fill:#e8f5e8
-    
-    class GIL,Memory,Speed,Deploy issue
-    class Multiprocess,Cython,Docker,Monitoring solution
 ```
 
 ### C++: Maximum Performance for Critical Paths
@@ -632,18 +614,6 @@ graph TB
     Message --> HFT
     HFT --> MarketData
     OrderRouter --> Cache
-    
-    classDef frontend fill:#e1f5fe
-    classDef python fill:#e8f5e8
-    classDef java fill:#fff3e0
-    classDef cpp fill:#ffebee
-    classDef data fill:#f3e5f5
-    
-    class Dashboard,Charts,Controls frontend
-    class Strategy,Research,Analytics,ML python
-    class Gateway,Message,Risk,Compliance java
-    class HFT,OrderRouter,MarketData cpp
-    class TimeSeries,Cache,Analytics_DB data
 ```
 
 ### Implementation Strategy by Use Case
@@ -755,11 +725,6 @@ flowchart TD
     Research --> Web_Python2[WebAPI + Python<br/>Research-focused]
     
     %% Styling
-    classDef decision fill:#fff3e0
-    classDef solution fill:#e8f5e8
-    
-    class Latency,Volume,Complexity decision
-    class TWS_CPP,FIX_Java,TWS_Python,Hybrid,Web_Python,Web_Python2 solution
 ```
 
 ### Implementation Recommendations by Trading Style

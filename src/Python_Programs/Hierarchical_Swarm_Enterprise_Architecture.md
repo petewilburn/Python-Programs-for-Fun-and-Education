@@ -126,23 +126,6 @@ graph TB
     Auth --> Secrets
     
     %% Styling
-    classDef presentation fill:#e1f5fe
-    classDef gateway fill:#f3e5f5
-    classDef service fill:#e8f5e8
-    classDef swarm fill:#fff3e0
-    classDef agent fill:#ffeb3b
-    classDef data fill:#f1f8e9
-    classDef infrastructure fill:#fce4ec
-    classDef external fill:#e3f2fd
-    
-    class WebUI,MobileApp,AdminPanel presentation
-    class APIGateway,Auth,RateLimit gateway
-    class PortfolioSvc,RiskSvc,ComplianceSvc,NotificationSvc service
-    class SwarmOrchestrator,SwarmEnvironment swarm
-    class QueenAgent,ScoutAgents,WorkerAgents,DroneAgents agent
-    class TimeSeriesDB,AnalyticsDB,CacheLayer,MessageQueue data
-    class Kubernetes,ServiceMesh,Monitoring,Secrets infrastructure
-    class IBKRWebAPI,MarketDataFeed,NewsAPI,EconomicData external
 ```
 
 ## Swarm Integration Patterns: Enterprise Context
@@ -261,15 +244,6 @@ graph LR
     DroneSvc --> RiskAdapter
     
     %% Styling
-    classDef core fill:#e8f5e8
-    classDef agent fill:#fff3e0
-    classDef support fill:#f3e5f5
-    classDef external fill:#e1f5fe
-    
-    class Orchestrator,Environment core
-    class QueenSvc,ScoutSvc,WorkerSvc,DroneSvc agent
-    class ConfigSvc,MetricsSvc,LoggingSvc support
-    class IBKRAdapter,MarketDataAdapter,RiskAdapter external
 ```
 
 ### 3. **Data Flow Architecture**
@@ -360,17 +334,6 @@ flowchart TB
     StrategyAdaptation --> ColdData
     
     %% Styling
-    classDef source fill:#e3f2fd
-    classDef ingestion fill:#e8f5e8
-    classDef swarm fill:#fff3e0
-    classDef output fill:#f3e5f5
-    classDef storage fill:#fce4ec
-    
-    class MarketData,NewsFeeds,EconData,InternalData source
-    class StreamProcessor,DataValidator,DataEnricher ingestion
-    class FeatureExtractor,SignalProcessor,OpportunityRanker,ScoutConsumers,QueenConsumer,WorkerConsumer,DroneConsumer,PheromoneProcessor,EmergentBehavior,StrategyAdaptation swarm
-    class TradingEngine,RiskEngine,PortfolioEngine,ReportingEngine output
-    class HotData,WarmData,ColdData storage
 ```
 
 ## Production Deployment Architecture
@@ -482,21 +445,6 @@ graph TB
     Redis --> Vault
     
     %% Styling
-    classDef ingress fill:#e1f5fe
-    classDef control fill:#e8f5e8
-    classDef agent fill:#fff3e0
-    classDef support fill:#f3e5f5
-    classDef data fill:#fce4ec
-    classDef monitoring fill:#f1f8e9
-    classDef security fill:#ffebee
-    
-    class Ingress ingress
-    class OrchestratorPod,EnvironmentPod control
-    class ScoutPods,WorkerPods,QueenPod,DronePods agent
-    class ConfigPod,MetricsPod support
-    class PostgreSQL,Redis,TimescaleDB,Kafka,Schema data
-    class Prometheus,Grafana,Jaeger monitoring
-    class Vault,CertManager security
 ```
 
 ### 2. **Scalability and Performance Patterns**
@@ -569,17 +517,6 @@ graph TB
     NodeAffinity --> DroneScaler
     
     %% Styling
-    classDef lb fill:#e1f5fe
-    classDef scaling fill:#e8f5e8
-    classDef agent fill:#fff3e0
-    classDef perf fill:#f3e5f5
-    classDef resource fill:#fce4ec
-    
-    class ALB,ServiceMesh lb
-    class HPA,CustomMetrics,VPA scaling
-    class ScoutScaler,WorkerScaler,DroneScaler agent
-    class Caching,ConnPooling,AsyncIO perf
-    class ResourceQuotas,PodDisruption,NodeAffinity resource
 ```
 
 ## Enterprise Integration Scenarios
@@ -642,15 +579,6 @@ graph LR
     RealtimeAnalytics --> CryptoSwarm
     
     %% Styling
-    classDef swarm fill:#fff3e0
-    classDef coordination fill:#e8f5e8
-    classDef infrastructure fill:#f3e5f5
-    classDef data fill:#e1f5fe
-    
-    class EquitySwarm,ForexSwarm,CommoditySwarm,CryptoSwarm swarm
-    class MetaOrchestrator,CorrelationEngine,ArbitrageDetector coordination
-    class UnifiedRisk,CentralClearing,ComplianceHub infrastructure
-    class DataLake,MLPlatform,RealtimeAnalytics data
 ```
 
 ### 2. **Institutional Multi-Tenant Platform**
@@ -732,19 +660,6 @@ graph TB
     SharedOrchestrator --> AuditTrail
     
     %% Styling
-    classDef tenant fill:#e1f5fe
-    classDef infrastructure fill:#e8f5e8
-    classDef agent fill:#fff3e0
-    classDef custom fill:#f3e5f5
-    classDef resource fill:#f1f8e9
-    classDef security fill:#ffebee
-    
-    class TenantA,TenantB,TenantC tenant
-    class SharedOrchestrator,SharedEnvironment infrastructure
-    class AgentPoolA,AgentPoolB,AgentPoolC agent
-    class CustomLogicA,CustomLogicB,CustomLogicC custom
-    class ResourceScheduler,QuotaManager,BillingEngine resource
-    class TenantIsolation,DataEncryption,AuditTrail security
 ```
 
 ## Advanced Integration Patterns
@@ -818,17 +733,6 @@ graph TB
     WebSockets --> SwarmCommands
     
     %% Styling
-    classDef command fill:#e8f5e8
-    classDef query fill:#e1f5fe
-    classDef events fill:#fff3e0
-    classDef processing fill:#f3e5f5
-    classDef integration fill:#f1f8e9
-    
-    class SwarmCommands,CommandHandlers,EventStore command
-    class ReadModels,QueryHandlers,ProjectionEngine query
-    class AgentEvents,PheromoneEvents,DecisionEvents,PerformanceEvents events
-    class EventBus,EventProcessors,Sagas processing
-    class ExternalSystems,ApiGateway,WebSockets integration
 ```
 
 ### 2. **Machine Learning Integration Pipeline**
@@ -904,17 +808,6 @@ flowchart TB
     StrategyAdaptation --> SwarmData
     
     %% Styling
-    classDef data fill:#e3f2fd
-    classDef features fill:#e8f5e8
-    classDef ml fill:#fff3e0
-    classDef agents fill:#f3e5f5
-    classDef feedback fill:#f1f8e9
-    
-    class MarketData,SwarmData,PerformanceData data
-    class TechnicalFeatures,SwarmFeatures,MacroFeatures features
-    class FeatureStore,ModelTraining,ModelRegistry,ModelServing ml
-    class PredictiveScouts,AdaptiveQueen,SmartWorkers,IntelligentDrones agents
-    class OutcomeTracking,ModelRetraining,StrategyAdaptation feedback
 ```
 
 ## Operational Excellence Patterns
@@ -984,17 +877,6 @@ graph TB
     AutoRemediation --> StructuredLogs
     
     %% Styling
-    classDef metrics fill:#e8f5e8
-    classDef logging fill:#e1f5fe
-    classDef timeseries fill:#fff3e0
-    classDef analytics fill:#f3e5f5
-    classDef response fill:#f1f8e9
-    
-    class SwarmMetrics,BusinessMetrics,InfraMetrics metrics
-    class StructuredLogs,DistributedTracing,ErrorTracking logging
-    class Prometheus,Grafana,Alertmanager timeseries
-    class AnomalyDetection,PerformanceAnalysis,PredictiveMaintenance analytics
-    class AlertingSystems,AutoRemediation,IncidentManagement response
 ```
 
 ### 2. **Security and Compliance Architecture**
@@ -1060,17 +942,6 @@ graph LR
     ComplianceMonitoring --> IncidentResponse
     
     %% Styling
-    classDef identity fill:#e1f5fe
-    classDef data fill:#e8f5e8
-    classDef network fill:#fff3e0
-    classDef compliance fill:#f3e5f5
-    classDef threat fill:#ffebee
-    
-    class IAM,SSO,MFA identity
-    class Encryption,KeyManagement,DataClassification data
-    class NetworkPolicies,ServiceMesh,VPN network
-    class RegulatoryReporting,AuditLogging,ComplianceMonitoring compliance
-    class ThreatDetection,IncidentResponse,VulnerabilityScanning threat
 ```
 
 ## Implementation Roadmap: From MVP to Enterprise Scale

@@ -34,24 +34,28 @@ The default dark theme applied to all charts uses:
 For maximum readability in dark environments:
 
 ```mermaid
+
 ```
 
 ### 2. Blue Professional Theme
 Corporate-friendly dark theme:
 
 ```mermaid
+
 ```
 
 ### 3. GitHub Compatible Theme
 Optimized for GitHub's dark theme:
 
 ```mermaid
+
 ```
 
 ### 4. Neutral Adaptive Theme
 Works well in both light and dark modes:
 
 ```mermaid
+
 ```
 
 ## Files Updated
