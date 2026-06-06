@@ -1,0 +1,38 @@
+name: js-bench
+
+# Runs the js-bench vitest fixtures. They are deliberately-failing fixtures for
+# the Verdict autonomous repair loop, so this job is EXPECTED to fail — that
+# failure (workflow_run: conclusion=failure) is what notifies Verdict via its
+# GitHub App webhook. The final step prints one `FAILED_TEST::<path>` line per
+# failing test file; Verdict's webhook scrapes those from the run logs to
+# identify exactly which tests to repair.
+
+on:
+  push:
+  workflow_dispatch:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: js-bench
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Install deps (vitest)
+        run: npm install
+      - name: Run js-bench + surface failing tests
+        run: |
+          npx vitest run --reporter=json --outputFile=results.json || true
+          node -e "
+          const r = require('./results.json');
+          const results = r.testResults || [];
+          const failed = results.filter(t => t.status === 'failed').map(t => t.name);
+          console.log('--- Verdict failing-test markers ---');
+          for (const f of failed) console.log('FAILED_TEST::' + f);
+          console.log('Total failed files: ' + failed.length + ' / ' + results.length);
+          process.exit((r.numFailedTests > 0 || failed.length > 0) ? 1 : 0);
+          "
