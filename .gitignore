@@ -66,3 +66,6 @@ options_contracts_*.csv
 
 # Documentation builds
 docs/_build/
+
+# Verdict js-bench fixtures: keep their package.json despite the broad *.json ignore above
+!js-bench/*.json

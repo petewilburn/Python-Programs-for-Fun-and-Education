@@ -1,0 +1,9 @@
+{
+  "name": "verdict-js-bench",
+  "version": "0.0.0",
+  "private": true,
+  "description": "JS/TS failing-test fixtures exercising the Verdict autonomous repair loop. Each <name>.test.ts pins behavior the deliberately-buggy <name>.ts must satisfy; the loop generates the fix.",
+  "devDependencies": {
+    "vitest": "*"
+  }
+}
